@@ -10,3 +10,8 @@ AND amount IN (2, 3, 5, 7);
 SELECT title, author FROM book
 WHERE title LIKE "% %" AND title NOT LIKE " " AND author LIKE "%С.%"
 ORDER by title ASC 
+
+SELECT title, author FROM book
+WHERE title LIKE "% %" AND title LIKE '_% _%' AND (author LIKE "% С._." OR author LIKE "% _.С.") 
+ORDER by title ASC 
+
