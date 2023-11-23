@@ -15,3 +15,6 @@ SELECT title, author FROM book
 WHERE title LIKE "% %" AND title LIKE '_% _%' AND (author LIKE "% С._." OR author LIKE "% _.С.") 
 ORDER by title ASC 
 
+SELECT (author) AS Автор, COUNT(title) AS Различных_книг, SUM(amount) AS Количество_экземпляров
+FROM book
+GROUP BY author;
