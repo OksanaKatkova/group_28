@@ -18,3 +18,16 @@ ORDER by title ASC
 SELECT (author) AS Автор, COUNT(title) AS Различных_книг, SUM(amount) AS Количество_экземпляров
 FROM book
 GROUP BY author;
+
+select author, sum(price*amount) as Стоимость
+from book
+where title <> "Идиот" AND title <>  "Белая гвардия"
+group by author
+having sum(price*amount) > 5000
+order by Стоимость desc
+
+SELECT author,  count(title) AS Количество_произведений, min(price) AS Мин_цена, count(amount) AS Кол_во_книг
+FROM book
+WHERE price > 500 AND amount > 1
+GROUP BY author
+HAVING count(title) > 1
